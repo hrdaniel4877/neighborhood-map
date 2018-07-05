@@ -34,7 +34,9 @@ class App extends Component {
 
   render() {
     return (
-      <CityMap />
+      <CityMap 
+      	locations={this.state.locations}
+      />
     );
   }
 }
