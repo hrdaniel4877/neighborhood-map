@@ -4,11 +4,18 @@ import {Map, GoogleApiWrapper, Marker} from 'google-maps-react'
 class CityMap extends Component {
 	render() {
 
+		const bound = new this.props.google.maps.LatLngBounds()
+
+	    for (let i = 0; i < this.props.locations.length; i++) {
+      		bound.extend(this.props.locations[i].position)
+    	}
+
 		return (
 			<Map
 				google={this.props.google} 
 				initialCenter={{lat:46.769994, lng:23.589588}} 
 				zoom={17} 
+				bounds={bound}
 			>
 
 			{
