@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import CityMap from './components/CityMap';
+import React, { Component } from 'react'
+import CityMap from './components/CityMap'
+import CityList from './components/CityList'
 
 class App extends Component {
   state = {
@@ -34,9 +35,14 @@ class App extends Component {
 
   render() {
     return (
-      <CityMap 
-      	locations={this.state.locations}
-      />
+    	<div>
+	      <CityList 
+	      	className='list'
+	      />
+	      <CityMap 
+	      	locations={this.state.locations}
+	      />    		
+    	</div>
     );
   }
 }
