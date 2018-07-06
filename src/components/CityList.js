@@ -7,6 +7,7 @@ function CityList (props) {
 				return (
 					<li
 						key={location.title}
+						onClick={props.onLocationClick}
 					>
 						{location.title}
 					</li>

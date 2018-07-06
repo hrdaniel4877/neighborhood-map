@@ -33,11 +33,16 @@ class App extends Component {
     })  	
   }
 
+  onListItemClick = event => {
+  	console.log('Click!');
+  }
+
   render() {
     return (
     	<div>
 	      <CityList 
 	      	locations={this.state.locations}
+	      	onLocationClick={this.onListItemClick}
 	      />
 	      <CityMap 
 	      	locations={this.state.locations}
