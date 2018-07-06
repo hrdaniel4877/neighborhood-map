@@ -37,7 +37,7 @@ class App extends Component {
     return (
     	<div>
 	      <CityList 
-	      	className='list'
+	      	locations={this.state.locations}
 	      />
 	      <CityMap 
 	      	locations={this.state.locations}
