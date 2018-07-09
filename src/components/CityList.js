@@ -1,8 +1,10 @@
 import React from 'react'
+import PlaceFilter from './PlaceFilter'
 
 function CityList (props) {
 	return (
 		<ul className='list'>
+			<PlaceFilter />
 			{props.locations.map(location => {
 				return (
 					<li
@@ -13,7 +15,7 @@ function CityList (props) {
 					</li>
 				)
 			})}
-		</ul>
+		</ul>		
 	)
 }
 
