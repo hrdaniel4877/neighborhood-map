@@ -1,10 +1,10 @@
 import React from 'react'
 import PlaceFilter from './PlaceFilter'
-import escregex from 'escape-regexp'
+import escregexp from 'escape-regexp'
 
 function CityList (props) {
 	
-	const expression = new RegExp(escregex(props.currentQuery).toLowerCase().trim())
+	const expression = new RegExp(escregexp(props.currentQuery).toLowerCase().trim())
 
 	return (
 		<ul className='list'>

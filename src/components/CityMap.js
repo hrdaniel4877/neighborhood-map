@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Map, GoogleApiWrapper, Marker, InfoWindow} from 'google-maps-react'
+import escregexp from 'escape-regexp'
 
 class CityMap extends Component {
 	
@@ -20,6 +21,7 @@ class CityMap extends Component {
 	render() {
 
 		const bound = new this.props.google.maps.LatLngBounds()
+		const expression = new RegExp(escregexp(this.props.queryText).toLowerCase().trim())
 
 	    for (let i = 0; i < this.props.locations.length; i++) {
       		bound.extend(this.props.locations[i].position)
@@ -34,7 +36,10 @@ class CityMap extends Component {
 			>
 
 				{
-					this.props.locations.map(location => {
+					this.props.locations.filter(location => {
+						return expression.test(location.title.toLowerCase())
+					})
+					.map(location => {
 						return (
 							<Marker 
 								key={location.id} 
