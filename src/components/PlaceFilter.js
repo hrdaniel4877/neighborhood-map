@@ -3,8 +3,10 @@ import React from 'react'
 function PlaceSearch (props) {
 	return (
 		<input
-			id="search-location"
+			type="text" 
 			placeholder="Filter locations..."
+			value={props.currentValue} 
+			onClick={props.onInputClick}
 		/>
 	)
 }

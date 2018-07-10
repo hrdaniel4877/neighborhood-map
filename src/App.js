@@ -4,7 +4,9 @@ import CityList from './components/CityList'
 
 class App extends Component {
   state = {
-  	locations: []
+  	locations: [],
+  	locationInfo: {},
+  	query: ''
   }
 
   // Fetch locations from Forsquare
@@ -35,6 +37,22 @@ class App extends Component {
 
   onListItemClick = event => {
   	console.log('Click!');
+  	this.setState({
+  		query: event.target.textContent
+  	})
+  	for (const location of this.state.locations) {
+  		if (location.title === event.target.textContent) {
+  			this.setState({
+  				locationInfo: location
+  			})
+  		}
+  	}
+  }
+
+  onInputClickk = event => {
+  	this.setState({
+  		query: ''
+  	})
   }
 
   render() {
@@ -43,6 +61,8 @@ class App extends Component {
 	      <CityList 
 	      	locations={this.state.locations}
 	      	onLocationClick={this.onListItemClick}
+	      	onInputClick={this.onInputClickk}
+	      	currentQuery={this.state.query}
 	      />
 	      <CityMap 
 	      	locations={this.state.locations}
