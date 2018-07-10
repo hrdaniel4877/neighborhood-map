@@ -6,7 +6,8 @@ function PlaceSearch (props) {
 			type="text" 
 			placeholder="Filter locations..."
 			value={props.currentValue} 
-			onClick={props.onInputClick}
+			onClick={props.onInputClick} 
+			onChange={props.onQueryChange}
 		/>
 	)
 }

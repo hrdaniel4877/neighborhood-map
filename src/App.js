@@ -55,6 +55,12 @@ class App extends Component {
   	})
   }
 
+  updateQuery = event => {
+  	this.setState({
+  		query: event.target.value
+  	})
+  }
+
   render() {
     return (
     	<div>
@@ -63,6 +69,7 @@ class App extends Component {
 	      	onLocationClick={this.onListItemClick}
 	      	onInputClick={this.onInputClickk}
 	      	currentQuery={this.state.query}
+	      	onQueryChange={this.updateQuery}
 	      />
 	      <CityMap 
 	      	locations={this.state.locations}

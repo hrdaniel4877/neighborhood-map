@@ -11,6 +11,7 @@ function CityList (props) {
 			<PlaceFilter 
 				currentValue={props.currentQuery}
 				onInputClick={props.onInputClick}
+				onQueryChange={props.onQueryChange}
 			/>
 			{props.locations.filter(location => {
 				return expression.test(location.title.toLowerCase())
