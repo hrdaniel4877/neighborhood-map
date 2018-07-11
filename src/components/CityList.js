@@ -11,7 +11,7 @@ function CityList (props) {
 			<PlaceFilter className='search'
 				queryValue={props.query}
 				onInputClick={props.onInputClick}
-				onQueryChange={props.onQueryChange}
+				onQueryChange={props.onQueryChange} 
 			/>
 			{props.locations.filter(location => {
 				return expression.test(location.title.toLowerCase())
@@ -21,6 +21,8 @@ function CityList (props) {
 					<li
 						key={location.title}
 						onClick={props.onLocationClick}
+						tabIndex="2"
+						aria-label="Location"
 					>
 						{location.title}
 					</li>

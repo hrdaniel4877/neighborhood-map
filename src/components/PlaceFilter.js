@@ -7,7 +7,10 @@ function PlaceFilter (props) {
 			placeholder="Filter locations..."
 			value={props.queryValue} 
 			onClick={props.onInputClick} 
-			onChange={props.onQueryChange}
+			onChange={props.onQueryChange} 
+			autofocus="autofocus"
+			tabIndex="1"
+			aria-label="Type to filter the locations"
 		/>
 	)
 }
