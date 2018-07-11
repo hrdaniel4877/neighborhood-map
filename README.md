@@ -69,7 +69,7 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 
 By default, the production build is a fully functional, offline-first
 [Progressive Web App](https://developers.google.com/web/progressive-web-apps/).
-
+The service worker only works in production mode.
 
 ## Installation
 * install all project dependencies with `npm install`
