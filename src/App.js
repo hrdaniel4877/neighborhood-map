@@ -31,7 +31,8 @@ class App extends Component {
       console.log('Fetched locations: ', this.state.locations);
     })
     .catch(err => {
-      console.log('Foursquare error:', err)
+      console.log('Foursquare error:', err);
+      alert('Something went wrong while fetching the locations. Please try again later.');
     })  	
   }
 
