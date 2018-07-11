@@ -2,6 +2,15 @@ import React, {Component} from 'react'
 import {Map, GoogleApiWrapper, Marker, InfoWindow} from 'google-maps-react'
 import escregexp from 'escape-regexp'
 
+//Google Maps API script error handler
+document.addEventListener("DOMContentLoaded", function(error) {
+  let googleMapScript = document.getElementsByTagName('SCRIPT').item(1);
+  googleMapScript.onerror = function(error) {
+    console.log('Google Maps API error: ', error);
+    alert('Something went wrong while fetching the map from Google. Please try again later.');
+  }
+});
+
 class CityMap extends Component {
 	
 	state = {
@@ -32,7 +41,7 @@ class CityMap extends Component {
 				google={this.props.google} 
 				initialCenter={{lat:46.769994, lng:23.589588}} 
 				zoom={17} 
-				bounds={bound}
+				bounds={bound}				
 			>
 
 				{

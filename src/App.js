@@ -32,7 +32,7 @@ class App extends Component {
     })
     .catch(err => {
       console.log('Foursquare error:', err);
-      alert('Something went wrong while fetching the locations. Please try again later.');
+      alert('Something went wrong while fetching the locations from Forsquare. Please try again later.');
     })  	
   }
 
