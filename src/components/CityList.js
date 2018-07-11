@@ -4,12 +4,12 @@ import escregexp from 'escape-regexp'
 
 function CityList (props) {
 	
-	const expression = new RegExp(escregexp(props.currentQuery).toLowerCase().trim())
+	const expression = new RegExp(escregexp(props.query).toLowerCase().trim())
 
 	return (
 		<ul className='list'>
-			<PlaceFilter 
-				currentValue={props.currentQuery}
+			<PlaceFilter className='search'
+				queryValue={props.query}
 				onInputClick={props.onInputClick}
 				onQueryChange={props.onQueryChange}
 			/>

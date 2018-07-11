@@ -5,23 +5,23 @@ import escregexp from 'escape-regexp'
 class CityMap extends Component {
 	
 	state = {
-	  activeMaker: {},
+	  selectedMaker: {},
 	  selectedPlace: {},
-	  showingInfoWindow: false
+	  selectedMarkerInfoWindow: false
 	}	
 
 	onMarkerClick = (props, marker, e) => {
 	  this.setState({
-	    activeMaker: marker,
+	    selectedMaker: marker,
 	    selectedPlace: props,
-	    showingInfoWindow: true
+	    selectedMarkerInfoWindow: true
 	  })
 	}
 
 	render() {
 
 		const bound = new this.props.google.maps.LatLngBounds()
-		const expression = new RegExp(escregexp(this.props.queryText).toLowerCase().trim())
+		const expression = new RegExp(escregexp(this.props.query).toLowerCase().trim())
 
 	    for (let i = 0; i < this.props.locations.length; i++) {
       		bound.extend(this.props.locations[i].position)
@@ -58,7 +58,7 @@ class CityMap extends Component {
 					})
 				}
 
-				<InfoWindow marker={this.state.activeMaker} visible={this.state.showingInfoWindow}>
+				<InfoWindow marker={this.state.selectedMaker} visible={this.state.selectedMarkerInfoWindow}>
 					<div>
 					    <h2>{this.state.selectedPlace.title}</h2>
 					    <h3>{this.state.selectedPlace.category}</h3>

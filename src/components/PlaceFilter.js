@@ -1,15 +1,15 @@
 import React from 'react'
 
-function PlaceSearch (props) {
+function PlaceFilter (props) {
 	return (
 		<input
 			type="text" 
 			placeholder="Filter locations..."
-			value={props.currentValue} 
+			value={props.queryValue} 
 			onClick={props.onInputClick} 
 			onChange={props.onQueryChange}
 		/>
 	)
 }
 
-export default PlaceSearch
+export default PlaceFilter

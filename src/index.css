@@ -6,7 +6,7 @@ body {
 
 .list {
 	position: absolute;
-	margin-top: 75px;
+	margin-top: 80px;
 	margin-left: 5px;
 	z-index: 1;
 	color: rgba(50, 50, 50, 0.8);
@@ -19,4 +19,3 @@ li:hover {
   background-color: rgba(50, 50, 50, 0.1);
   cursor: pointer;
 }
-

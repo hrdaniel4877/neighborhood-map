@@ -28,15 +28,14 @@ class App extends Component {
         }
       })
       this.setState({ locations });
-      console.log(this.state.locations);
+      console.log('Fetched locations: ', this.state.locations);
     })
     .catch(err => {
       console.log('Foursquare error:', err)
     })  	
   }
 
-  onListItemClick = event => {
-  	console.log('Click!');
+  onLocationClick = event => {
   	this.setState({
   		query: event.target.textContent
   	})
@@ -49,7 +48,7 @@ class App extends Component {
   	}
   }
 
-  onInputClickk = event => {
+  onInputClick = event => {
   	this.setState({
   		query: ''
   	})
@@ -66,14 +65,14 @@ class App extends Component {
     	<div>
 	      <CityList 
 	      	locations={this.state.locations}
-	      	onLocationClick={this.onListItemClick}
-	      	onInputClick={this.onInputClickk}
-	      	currentQuery={this.state.query}
+	      	query={this.state.query}
+	      	onLocationClick={this.onLocationClick}
+	      	onInputClick={this.onInputClick}	      	
 	      	onQueryChange={this.updateQuery}
 	      />
 	      <CityMap 
 	      	locations={this.state.locations}
-	      	queryText={this.state.query}
+	      	query={this.state.query}
 	      />    		
     	</div>
     );
